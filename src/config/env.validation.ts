@@ -10,4 +10,5 @@ export const envValidationSchema = Joi.object({
     .valid('development', 'production', 'test')
     .default('development'),
   PORT: Joi.number().default(3000),
+  DATABASE_URL: Joi.string().uri({ scheme: ['postgresql', 'postgres'] }).required(),
 });
